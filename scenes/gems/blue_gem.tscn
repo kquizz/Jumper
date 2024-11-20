@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cgldrb1pqjluc"]
+
+[ext_resource type="Script" path="res://scripts/gem.gd" id="1_xwppf"]
+[ext_resource type="Texture2D" uid="uid://dax8uihjd1n51" path="res://assets/Items/gemBlue.png" id="2_1yjht"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vyfdb"]
+radius = 17.0
+
+[node name="Blue Gem" type="Area2D"]
+collision_layer = 2
+script = ExtResource("1_xwppf")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(36, 35)
+shape = SubResource("CircleShape2D_vyfdb")
+
+[node name="Gem" type="Sprite2D" parent="."]
+position = Vector2(36, 36)
+texture = ExtResource("2_1yjht")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

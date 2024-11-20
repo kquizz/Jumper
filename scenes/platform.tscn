@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dlnnee2kenf3e"]
+
+[ext_resource type="Texture2D" uid="uid://b0wvfp8xstsp8" path="res://assets/Tiles/bridge.png" id="1_7v70w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bhq2d"]
+size = Vector2(70, 19)
+
+[node name="AnimatableBody2D" type="AnimatableBody2D"]
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_7v70w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, 25.5)
+shape = SubResource("RectangleShape2D_bhq2d")
+one_way_collision = true

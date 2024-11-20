@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bk4j7wh11scbp"]
+
+[ext_resource type="Script" path="res://scripts/key.gd" id="1_v2dpf"]
+[ext_resource type="Texture2D" uid="uid://cxhxgi3q0omqk" path="res://assets/Items/keyBlue.png" id="2_v8kfe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jbfeb"]
+size = Vector2(59, 36)
+
+[node name="Blue Key" type="Area2D"]
+collision_layer = 2
+script = ExtResource("1_v2dpf")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -3)
+shape = SubResource("RectangleShape2D_jbfeb")
+metadata/_edit_group_ = true
+
+[node name="Key" type="Sprite2D" parent="."]
+texture = ExtResource("2_v8kfe")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

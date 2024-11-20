@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c3o5ifkx3xwx1"
+path="res://.godot/imported/21 - Fanfare.ogg-d4ec206e4cce8f080a6174aa6a52b8d3.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/JRPG OST (Rev 2)/21 - Fanfare.ogg"
+dest_files=["res://.godot/imported/21 - Fanfare.ogg-d4ec206e4cce8f080a6174aa6a52b8d3.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

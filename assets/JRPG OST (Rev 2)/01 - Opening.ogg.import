@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b2nx665wx3c2x"
+path="res://.godot/imported/01 - Opening.ogg-ff84b88294b04032559f45aa746d3b84.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/JRPG OST (Rev 2)/01 - Opening.ogg"
+dest_files=["res://.godot/imported/01 - Opening.ogg-ff84b88294b04032559f45aa746d3b84.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

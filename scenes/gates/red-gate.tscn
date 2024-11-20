@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=3 uid="uid://bv6s7wltvr8de"]
+
+[ext_resource type="Script" path="res://scripts/gate.gd" id="1_jvdji"]
+[ext_resource type="Texture2D" uid="uid://bon6em1a3e32h" path="res://assets/Tiles/lock_red.png" id="4_huyqc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ryu03"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_huyqc")
+}],
+"loop": true,
+"name": &"red",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mbu0a"]
+size = Vector2(68, 353)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tyfhm"]
+size = Vector2(83, 363)
+
+[node name="Gates" type="StaticBody2D"]
+script = ExtResource("1_jvdji")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 1)
+sprite_frames = SubResource("SpriteFrames_ryu03")
+animation = &"red"
+autoplay = "red"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -71)
+sprite_frames = SubResource("SpriteFrames_ryu03")
+animation = &"red"
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -142)
+sprite_frames = SubResource("SpriteFrames_ryu03")
+animation = &"red"
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -213)
+sprite_frames = SubResource("SpriteFrames_ryu03")
+animation = &"red"
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -284)
+sprite_frames = SubResource("SpriteFrames_ryu03")
+animation = &"red"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -142.5)
+shape = SubResource("RectangleShape2D_mbu0a")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, -142)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1.5, 0.5)
+shape = SubResource("RectangleShape2D_tyfhm")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]

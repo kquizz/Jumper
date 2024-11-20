@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dnnf4pw1150us"
+path="res://.godot/imported/02 - BWV 1007 - Prelude.ogg-87363e0f34ef5e3781da96f15256fa3c.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/JRPG OST (Rev 2)/02 - BWV 1007 - Prelude.ogg"
+dest_files=["res://.godot/imported/02 - BWV 1007 - Prelude.ogg-87363e0f34ef5e3781da96f15256fa3c.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

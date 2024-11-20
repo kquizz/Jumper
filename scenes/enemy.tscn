@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=3 uid="uid://djmq5i45066fi"]
+
+[ext_resource type="Texture2D" uid="uid://div0nbnxgqk5" path="res://assets/Enemies/spider_walk1.png" id="1_w0d7e"]
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_wuxsh"]
+[ext_resource type="Texture2D" uid="uid://4xasys4sg2ed" path="res://assets/Enemies/spider_walk2.png" id="2_ft0et"]
+[ext_resource type="PackedScene" uid="uid://kp2p1gkxbfak" path="res://scenes/killzone.tscn" id="3_g2cpk"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qjtsy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_w0d7e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ft0et")
+}],
+"loop": true,
+"name": &"spider_walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_84vxw"]
+radius = 18.0
+height = 54.0
+
+[node name="Enemy" type="Node2D"]
+script = ExtResource("1_wuxsh")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_qjtsy")
+animation = &"spider_walk"
+autoplay = "spider_walk"
+frame = 1
+frame_progress = 0.397211
+
+[node name="Killzone" parent="." instance=ExtResource("3_g2cpk")]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+visible = false
+position = Vector2(4, -4)
+rotation = -1.13446
+scale = Vector2(0.75, 0.75)
+shape = SubResource("CapsuleShape2D_84vxw")
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+visible = false
+target_position = Vector2(44, 0)
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+visible = false
+target_position = Vector2(-44, 0)

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://de5yrjmxb47n6"
+path="res://.godot/imported/23 - Inn.ogg-e54c84823374f8eb94aa9294780340e6.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/JRPG OST (Rev 2)/23 - Inn.ogg"
+dest_files=["res://.godot/imported/23 - Inn.ogg-e54c84823374f8eb94aa9294780340e6.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

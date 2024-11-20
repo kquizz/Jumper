@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cju0m2lnd88c"]
+
+[ext_resource type="AudioStream" uid="uid://dnnf4pw1150us" path="res://assets/JRPG OST (Rev 2)/02 - BWV 1007 - Prelude.ogg" id="1_8xi70"]
+
+[node name="Music" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_8xi70")
+volume_db = -9.6
+autoplay = true
+bus = &"Music"

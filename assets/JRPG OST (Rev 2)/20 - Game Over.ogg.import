@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://3i2jgjscns54"
+path="res://.godot/imported/20 - Game Over.ogg-36e5db61412bbf0397946c732bbfd38e.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/JRPG OST (Rev 2)/20 - Game Over.ogg"
+dest_files=["res://.godot/imported/20 - Game Over.ogg-36e5db61412bbf0397946c732bbfd38e.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

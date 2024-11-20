@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://c82r1ps0ppaxl"]
+
+[ext_resource type="Script" path="res://scripts/key.gd" id="1_wmmkg"]
+[ext_resource type="Texture2D" uid="uid://bsqx7r1ebcjbq" path="res://assets/Items/keyRed.png" id="4_tt1ko"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jbfeb"]
+size = Vector2(59, 36)
+
+[node name="Red Key" type="Area2D"]
+collision_layer = 2
+script = ExtResource("1_wmmkg")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0.5, -3)
+shape = SubResource("RectangleShape2D_jbfeb")
+
+[node name="Key" type="Sprite2D" parent="."]
+texture = ExtResource("4_tt1ko")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

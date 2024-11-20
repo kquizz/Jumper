@@ -1,0 +1,113 @@
+[gd_scene load_steps=19 format=3 uid="uid://g64pfw4etv84"]
+
+[ext_resource type="Script" path="res://scripts/green-player.gd" id="1_in22n"]
+[ext_resource type="Texture2D" uid="uid://doi2j6dg77i1n" path="res://assets/unused/OLD_Player/p1_duck.png" id="2_trx1n"]
+[ext_resource type="Texture2D" uid="uid://xg41v0u4jg6n" path="res://assets/unused/OLD_Player/p1_hurt.png" id="3_p51fo"]
+[ext_resource type="Texture2D" uid="uid://ejbg63pvfp2v" path="res://assets/unused/OLD_Player/p1_jump.png" id="4_pl87k"]
+[ext_resource type="Texture2D" uid="uid://jw5utic6cpy7" path="res://assets/unused/OLD_Player/p1_stand.png" id="5_3621e"]
+[ext_resource type="Texture2D" uid="uid://4clh2wtbplh" path="res://assets/unused/OLD_Player/p1_walk/PNG/p1_walk01.png" id="6_i1ysb"]
+[ext_resource type="Texture2D" uid="uid://bmu2fgrll84ge" path="res://assets/unused/OLD_Player/p1_walk/PNG/p1_walk02.png" id="7_rfohf"]
+[ext_resource type="Texture2D" uid="uid://b2v8dlup0dptv" path="res://assets/unused/OLD_Player/p1_walk/PNG/p1_walk03.png" id="8_lrula"]
+[ext_resource type="Texture2D" uid="uid://bk645pi4ymrnt" path="res://assets/unused/OLD_Player/p1_walk/PNG/p1_walk04.png" id="9_qghai"]
+[ext_resource type="Texture2D" uid="uid://raru1onwl3ve" path="res://assets/unused/OLD_Player/p1_walk/PNG/p1_walk05.png" id="10_rre4w"]
+[ext_resource type="Texture2D" uid="uid://c4dcmur3vmv5k" path="res://assets/unused/OLD_Player/p1_walk/PNG/p1_walk06.png" id="11_povqv"]
+[ext_resource type="Texture2D" uid="uid://c7pd7s818umwh" path="res://assets/unused/OLD_Player/p1_walk/PNG/p1_walk07.png" id="12_5t72x"]
+[ext_resource type="Texture2D" uid="uid://bhp38a6dyspob" path="res://assets/unused/OLD_Player/p1_walk/PNG/p1_walk08.png" id="13_s7agj"]
+[ext_resource type="Texture2D" uid="uid://dsbqesm4ajhv7" path="res://assets/unused/OLD_Player/p1_walk/PNG/p1_walk09.png" id="14_goq3r"]
+[ext_resource type="Texture2D" uid="uid://bdhcja6imxpen" path="res://assets/unused/OLD_Player/p1_walk/PNG/p1_walk10.png" id="15_6qww6"]
+[ext_resource type="Texture2D" uid="uid://dxg7pj7hhfdac" path="res://assets/unused/OLD_Player/p1_walk/PNG/p1_walk11.png" id="16_1vb4t"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_slesh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_trx1n")
+}],
+"loop": true,
+"name": &"green_duck",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_p51fo")
+}],
+"loop": true,
+"name": &"green_hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_pl87k")
+}],
+"loop": true,
+"name": &"green_jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_3621e")
+}],
+"loop": true,
+"name": &"green_stand",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_i1ysb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_rfohf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_lrula")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_qghai")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_rre4w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_povqv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_5t72x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_s7agj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_goq3r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_6qww6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_1vb4t")
+}],
+"loop": true,
+"name": &"green_walk",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wbbly"]
+radius = 20.0
+height = 74.0
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+z_index = 5
+position = Vector2(207, 110)
+script = ExtResource("1_in22n")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 3)
+sprite_frames = SubResource("SpriteFrames_slesh")
+animation = &"green_walk"
+autoplay = "green_stand"
+frame_progress = 0.502789
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, 3)
+shape = SubResource("CapsuleShape2D_wbbly")

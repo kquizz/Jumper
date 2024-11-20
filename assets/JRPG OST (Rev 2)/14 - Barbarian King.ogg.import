@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://d32vw04d4xeas"
+path="res://.godot/imported/14 - Barbarian King.ogg-4de724d0c3263f8516ed012fbc1b48aa.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/JRPG OST (Rev 2)/14 - Barbarian King.ogg"
+dest_files=["res://.godot/imported/14 - Barbarian King.ogg-4de724d0c3263f8516ed012fbc1b48aa.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

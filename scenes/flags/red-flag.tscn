@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://cytbrfbdibpk7"]
+
+[ext_resource type="Script" path="res://scripts/flag.gd" id="1_8jufj"]
+[ext_resource type="Texture2D" uid="uid://qbqkb7ff88c4" path="res://assets/Items/flagRed2.png" id="6_p0ym4"]
+[ext_resource type="Texture2D" uid="uid://bcnrjjpaqs0kt" path="res://assets/Items/flagRed.png" id="7_il1pm"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nkgq2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_p0ym4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_il1pm")
+}],
+"loop": true,
+"name": &"red",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q72fj"]
+size = Vector2(66, 70)
+
+[node name="Node2D" type="Area2D"]
+script = ExtResource("1_8jufj")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_nkgq2")
+animation = &"red"
+autoplay = "red"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(-2, 0)
+shape = SubResource("RectangleShape2D_q72fj")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

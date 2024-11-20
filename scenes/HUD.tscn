@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://c84uubkb2kl54"]
+
+[ext_resource type="Texture2D" uid="uid://dwrclhidow1i6" path="res://assets/HUD/hud_gem_green.png" id="1_xqupc"]
+[ext_resource type="Texture2D" uid="uid://bkkf3qbs24ws0" path="res://assets/HUD/hud_keyGreen.png" id="2_e4tod"]
+[ext_resource type="Texture2D" uid="uid://ci8hb2ug5qxfo" path="res://assets/HUD/hud_keyGreem_disabled.png" id="3_n7vnp"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="Gem Count Tens" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Gem Count Ones" type="TextureRect" parent="."]
+offset_left = 44.0
+offset_right = 84.0
+offset_bottom = 40.0
+
+[node name="Gem Icon" type="TextureRect" parent="."]
+offset_left = 88.0
+offset_right = 134.0
+offset_bottom = 40.0
+texture = ExtResource("1_xqupc")
+
+[node name="Key Icon - Enabled" type="TextureRect" parent="."]
+offset_left = 146.0
+offset_top = 1.0
+offset_right = 190.0
+offset_bottom = 41.0
+texture = ExtResource("2_e4tod")
+
+[node name="Key Icon - Disabled" type="TextureRect" parent="."]
+offset_left = 146.0
+offset_top = 1.0
+offset_right = 190.0
+offset_bottom = 41.0
+texture = ExtResource("3_n7vnp")

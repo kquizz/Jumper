@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://dmuhnj1riwqwr"]
+
+[ext_resource type="Script" path="res://scripts/gate.gd" id="1_wi01f"]
+[ext_resource type="Texture2D" uid="uid://kdoacfbhd5jb" path="res://assets/Tiles/lock_blue.png" id="2_3dlhs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mbu0a"]
+size = Vector2(68, 353)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tyfhm"]
+size = Vector2(83, 363)
+
+[node name="Blue Gate" type="StaticBody2D"]
+script = ExtResource("1_wi01f")
+
+[node name="Lock_old" type="Sprite2D" parent="."]
+position = Vector2(1, -1)
+texture = ExtResource("2_3dlhs")
+
+[node name="Lock2" type="Sprite2D" parent="."]
+position = Vector2(1, -72)
+texture = ExtResource("2_3dlhs")
+
+[node name="Lock3" type="Sprite2D" parent="."]
+position = Vector2(1, -143)
+texture = ExtResource("2_3dlhs")
+
+[node name="Lock4" type="Sprite2D" parent="."]
+position = Vector2(1, -214)
+texture = ExtResource("2_3dlhs")
+
+[node name="Lock5" type="Sprite2D" parent="."]
+position = Vector2(1, -285)
+texture = ExtResource("2_3dlhs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -142.5)
+shape = SubResource("RectangleShape2D_mbu0a")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, -142)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1.5, 0.5)
+shape = SubResource("RectangleShape2D_tyfhm")
+
+[node name="Lock" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_3dlhs")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]

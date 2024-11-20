@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://hd6ul07wapaj"
+path="res://.godot/imported/05 - Reunion.ogg-7db9cf28fdd3b9a6a06f6e0b997feeaf.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/JRPG OST (Rev 2)/05 - Reunion.ogg"
+dest_files=["res://.godot/imported/05 - Reunion.ogg-7db9cf28fdd3b9a6a06f6e0b997feeaf.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
