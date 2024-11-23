@@ -22,6 +22,7 @@ animations = [{
 size = Vector2(66, 70)
 
 [node name="Node2D" type="Area2D"]
+collision_layer = 3
 script = ExtResource("9_ej8vf")
 metadata/_edit_group_ = true
 

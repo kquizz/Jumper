@@ -9,7 +9,9 @@ size = Vector2(71, 70)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ludie"]
 size = Vector2(79, 70)
 
-[node name="Gates" type="StaticBody2D"]
+[node name="Green Gates" type="StaticBody2D"]
+collision_layer = 16
+collision_mask = 31
 script = ExtResource("1_5bj5r")
 
 [node name="Lock" type="TextureRect" parent="."]
@@ -20,15 +22,19 @@ offset_bottom = 35.0
 texture = ExtResource("3_j3byv")
 
 [node name="Icon" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("3_j3byv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_c7bi3")
 
 [node name="Area2D" type="Area2D" parent="."]
+visible = false
 
 [node name="UnlockArea" type="CollisionShape2D" parent="Area2D"]
+visible = false
 position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_ludie")
 

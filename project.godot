@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Run Around"
-run/main_scene="res://scenes/game.tscn"
+run/main_scene="res://scenes/stages/Stage-1-1.tscn"
 config/features=PackedStringArray("4.3", "C#", "Mobile")
 config/icon="res://icon.svg"
 

@@ -7,7 +7,8 @@
 size = Vector2(59, 36)
 
 [node name="Green Key" type="Area2D"]
-collision_layer = 2
+collision_layer = 16
+collision_mask = 31
 script = ExtResource("1_5ve34")
 metadata/_edit_group_ = true
 

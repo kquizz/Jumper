@@ -1,51 +1,41 @@
-[gd_scene load_steps=5 format=3 uid="uid://dmuhnj1riwqwr"]
+[gd_scene load_steps=5 format=3 uid="uid://bg46njmpw044p"]
 
 [ext_resource type="Script" path="res://scripts/gate.gd" id="1_wi01f"]
 [ext_resource type="Texture2D" uid="uid://kdoacfbhd5jb" path="res://assets/Tiles/lock_blue.png" id="2_3dlhs"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mbu0a"]
-size = Vector2(68, 353)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c7bi3"]
+size = Vector2(71, 70)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tyfhm"]
-size = Vector2(83, 363)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ludie"]
+size = Vector2(79, 70)
 
-[node name="Blue Gate" type="StaticBody2D"]
+[node name="Green Gates" type="StaticBody2D"]
+collision_layer = 16
+collision_mask = 31
 script = ExtResource("1_wi01f")
 
-[node name="Lock_old" type="Sprite2D" parent="."]
-position = Vector2(1, -1)
+[node name="Lock" type="TextureRect" parent="."]
+offset_left = -34.0
+offset_top = -35.0
+offset_right = 36.0
+offset_bottom = 35.0
 texture = ExtResource("2_3dlhs")
 
-[node name="Lock2" type="Sprite2D" parent="."]
-position = Vector2(1, -72)
-texture = ExtResource("2_3dlhs")
-
-[node name="Lock3" type="Sprite2D" parent="."]
-position = Vector2(1, -143)
-texture = ExtResource("2_3dlhs")
-
-[node name="Lock4" type="Sprite2D" parent="."]
-position = Vector2(1, -214)
-texture = ExtResource("2_3dlhs")
-
-[node name="Lock5" type="Sprite2D" parent="."]
-position = Vector2(1, -285)
+[node name="Icon" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("2_3dlhs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -142.5)
-shape = SubResource("RectangleShape2D_mbu0a")
+visible = false
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_c7bi3")
 
 [node name="Area2D" type="Area2D" parent="."]
-position = Vector2(0, -142)
+visible = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(1.5, 0.5)
-shape = SubResource("RectangleShape2D_tyfhm")
-
-[node name="Lock" type="TextureRect" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("2_3dlhs")
+[node name="UnlockArea" type="CollisionShape2D" parent="Area2D"]
+visible = false
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_ludie")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]

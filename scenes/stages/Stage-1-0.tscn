@@ -1,20 +1,20 @@
-[gd_scene load_steps=23 format=4 uid="uid://duvtw5pbqw58w"]
+[gd_scene load_steps=23 format=4 uid="uid://dh74qbg0eolgx"]
 
-[ext_resource type="Script" path="res://scripts/engine.gd" id="1_8d5wu"]
-[ext_resource type="PackedScene" uid="uid://dcjx43je44o6b" path="res://scenes/players/green-player.tscn" id="1_eu2q3"]
-[ext_resource type="Texture2D" uid="uid://opm7n7o77lp5" path="res://assets/Tiles/tiles_spritesheet.png" id="3_eo57h"]
-[ext_resource type="PackedScene" uid="uid://dlnnee2kenf3e" path="res://scenes/platform.tscn" id="4_8wi2i"]
-[ext_resource type="PackedScene" uid="uid://kp2p1gkxbfak" path="res://scenes/killzone.tscn" id="5_abree"]
-[ext_resource type="PackedScene" uid="uid://3awhnm2es2gd" path="res://scenes/keys/green-key.tscn" id="5_d7jyy"]
-[ext_resource type="PackedScene" uid="uid://brp6qb7f6gv8p" path="res://scenes/gems/green_gem.tscn" id="5_teeoe"]
-[ext_resource type="Texture2D" uid="uid://ert4pmptan2w" path="res://assets/Backgrounds/bg.png" id="7_yex65"]
-[ext_resource type="PackedScene" uid="uid://djmq5i45066fi" path="res://scenes/enemy.tscn" id="8_j2dmg"]
-[ext_resource type="PackedScene" uid="uid://d2kil21urjwvj" path="res://scenes/flags/green-flag.tscn" id="8_mjm80"]
-[ext_resource type="PackedScene" uid="uid://cf50e6tjohjfd" path="res://scenes/flags/blue-flag.tscn" id="10_je3t0"]
-[ext_resource type="PackedScene" uid="uid://dcboka22laeu8" path="res://scenes/gates/green-gate.tscn" id="11_clpy3"]
-[ext_resource type="PackedScene" uid="uid://c84uubkb2kl54" path="res://scenes/HUD.tscn" id="13_ugqjj"]
-[ext_resource type="PackedScene" uid="uid://cc3pgnhpovybn" path="res://scenes/players/blue-player.tscn" id="15_w8jrr"]
-[ext_resource type="Script" path="res://scripts/blue-player.gd" id="16_a76i0"]
+[ext_resource type="Script" path="res://scripts/engine.gd" id="1_1sdng"]
+[ext_resource type="Texture2D" uid="uid://ert4pmptan2w" path="res://assets/Backgrounds/bg.png" id="2_b38gb"]
+[ext_resource type="PackedScene" uid="uid://kp2p1gkxbfak" path="res://scenes/killzone.tscn" id="3_3brsp"]
+[ext_resource type="PackedScene" uid="uid://3awhnm2es2gd" path="res://scenes/keys/green-key.tscn" id="4_u7m30"]
+[ext_resource type="PackedScene" uid="uid://dlnnee2kenf3e" path="res://scenes/platform.tscn" id="5_q850y"]
+[ext_resource type="Texture2D" uid="uid://opm7n7o77lp5" path="res://assets/Tiles/tiles_spritesheet.png" id="6_jlwq0"]
+[ext_resource type="PackedScene" uid="uid://d2kil21urjwvj" path="res://scenes/flags/green-flag.tscn" id="7_f01ce"]
+[ext_resource type="PackedScene" uid="uid://cf50e6tjohjfd" path="res://scenes/flags/blue-flag.tscn" id="8_156y6"]
+[ext_resource type="PackedScene" uid="uid://djmq5i45066fi" path="res://scenes/enemies/spider.tscn" id="9_aqeid"]
+[ext_resource type="PackedScene" uid="uid://dcboka22laeu8" path="res://scenes/gates/green-gate.tscn" id="10_ec4yi"]
+[ext_resource type="PackedScene" uid="uid://brp6qb7f6gv8p" path="res://scenes/gems/green_gem.tscn" id="11_o7uqr"]
+[ext_resource type="PackedScene" uid="uid://dcjx43je44o6b" path="res://scenes/players/green-player.tscn" id="12_3bfvn"]
+[ext_resource type="PackedScene" uid="uid://c84uubkb2kl54" path="res://scenes/HUD.tscn" id="13_v86n8"]
+[ext_resource type="PackedScene" uid="uid://cc3pgnhpovybn" path="res://scenes/players/blue-player.tscn" id="14_kj2y7"]
+[ext_resource type="Script" path="res://scripts/blue-player.gd" id="15_kf5bd"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ckfbm"]
 distance = -129.0
@@ -60,7 +60,7 @@ _data = {
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gw4bt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_04ndg"]
-texture = ExtResource("3_eo57h")
+texture = ExtResource("6_jlwq0")
 separation = Vector2i(2, 2)
 texture_region_size = Vector2i(70, 70)
 0:0/0 = 0
@@ -3074,20 +3074,20 @@ physics_layer_0/collision_layer = 1
 physics_layer_0/physics_material = SubResource("PhysicsMaterial_gw4bt")
 sources/0 = SubResource("TileSetAtlasSource_04ndg")
 
-[node name="Game" type="Node2D"]
+[node name="Stage1" type="Node2D"]
 position = Vector2(30, 15)
 
 [node name="Engine" type="Node" parent="."]
 unique_name_in_owner = true
-script = ExtResource("1_8d5wu")
+script = ExtResource("1_1sdng")
 
 [node name="Background" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(1932, 177)
 scale = Vector2(15.1133, 4.70703)
-texture = ExtResource("7_yex65")
+texture = ExtResource("2_b38gb")
 
-[node name="Killzone" parent="." instance=ExtResource("5_abree")]
+[node name="Killzone" parent="." instance=ExtResource("3_3brsp")]
 position = Vector2(1318, 507)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
@@ -3095,12 +3095,12 @@ shape = SubResource("WorldBoundaryShape2D_ckfbm")
 
 [node name="Keys" type="Node" parent="."]
 
-[node name="Green Key" parent="Keys" instance=ExtResource("5_d7jyy")]
+[node name="Green Key" parent="Keys" instance=ExtResource("4_u7m30")]
 position = Vector2(1850, -139)
 
 [node name="Platforms" type="Node" parent="."]
 
-[node name="Mover platform" parent="Platforms" instance=ExtResource("4_8wi2i")]
+[node name="Mover platform" parent="Platforms" instance=ExtResource("5_q850y")]
 position = Vector2(1689, 26)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/Mover platform"]
@@ -3109,7 +3109,7 @@ libraries = {
 }
 autoplay = "move platform"
 
-[node name="static platform" parent="Platforms" instance=ExtResource("4_8wi2i")]
+[node name="static platform" parent="Platforms" instance=ExtResource("5_q850y")]
 position = Vector2(1722, -41)
 
 [node name="TileMaps" type="Node" parent="."]
@@ -3128,50 +3128,50 @@ tile_set = SubResource("TileSet_y068a")
 
 [node name="Flags" type="Node" parent="."]
 
-[node name="Green Flag" parent="Flags" instance=ExtResource("8_mjm80")]
+[node name="Green Flag" parent="Flags" instance=ExtResource("7_f01ce")]
 position = Vector2(2801, 396)
 
-[node name="Blue Flag" parent="Flags" instance=ExtResource("10_je3t0")]
+[node name="Blue Flag" parent="Flags" instance=ExtResource("8_156y6")]
 position = Vector2(2806, 0)
 
 [node name="Enemies" type="Node" parent="."]
 
-[node name="Spider" parent="Enemies" instance=ExtResource("8_j2dmg")]
+[node name="Spider" parent="Enemies" instance=ExtResource("9_aqeid")]
 position = Vector2(1700, 197)
 
 [node name="Gates" type="Node" parent="."]
 
-[node name="Green Gate" parent="Gates" instance=ExtResource("11_clpy3")]
+[node name="Green Gate" parent="Gates" instance=ExtResource("10_ec4yi")]
 position = Vector2(2028, 115)
 collision_layer = 2
 height = 10
 
 [node name="Gems" type="Node" parent="."]
 
-[node name="Green Gem" parent="Gems" instance=ExtResource("5_teeoe")]
+[node name="Green Gem" parent="Gems" instance=ExtResource("11_o7uqr")]
 position = Vector2(628, 147)
 
-[node name="Green Gem2" parent="Gems" instance=ExtResource("5_teeoe")]
+[node name="Green Gem2" parent="Gems" instance=ExtResource("11_o7uqr")]
 position = Vector2(421, 146)
 
-[node name="Green Gem3" parent="Gems" instance=ExtResource("5_teeoe")]
+[node name="Green Gem3" parent="Gems" instance=ExtResource("11_o7uqr")]
 position = Vector2(1188, -107)
 
-[node name="Green Gem4" parent="Gems" instance=ExtResource("5_teeoe")]
+[node name="Green Gem4" parent="Gems" instance=ExtResource("11_o7uqr")]
 position = Vector2(1697, -166)
 
-[node name="Green Gem5" parent="Gems" instance=ExtResource("5_teeoe")]
+[node name="Green Gem5" parent="Gems" instance=ExtResource("11_o7uqr")]
 position = Vector2(2155, 88)
 
-[node name="Green Gem6" parent="Gems" instance=ExtResource("5_teeoe")]
+[node name="Green Gem6" parent="Gems" instance=ExtResource("11_o7uqr")]
 position = Vector2(2547, 491)
 
 [node name="Players" type="Node" parent="."]
 
-[node name="Green Player" parent="Players" instance=ExtResource("1_eu2q3")]
+[node name="Green Player" parent="Players" instance=ExtResource("12_3bfvn")]
 position = Vector2(269, 212)
 
-[node name="HUD" parent="Players/Green Player" instance=ExtResource("13_ugqjj")]
+[node name="HUD" parent="Players/Green Player" instance=ExtResource("13_v86n8")]
 
 [node name="Camera" type="Camera2D" parent="Players/Green Player"]
 position = Vector2(0, 6)
@@ -3179,6 +3179,6 @@ zoom = Vector2(2, 2)
 limit_bottom = 600
 limit_smoothed = true
 
-[node name="Blue Player" parent="Players" instance=ExtResource("15_w8jrr")]
+[node name="Blue Player" parent="Players" instance=ExtResource("14_kj2y7")]
 position = Vector2(503, 161)
-script = ExtResource("16_a76i0")
+script = ExtResource("15_kf5bd")

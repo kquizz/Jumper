@@ -22,6 +22,7 @@ animations = [{
 size = Vector2(66, 70)
 
 [node name="Node2D" type="Area2D"]
+collision_layer = 3
 script = ExtResource("1_ibv8v")
 metadata/_edit_group_ = true
 
@@ -31,6 +32,7 @@ animation = &"blue"
 autoplay = "blue"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(-2, 0)
 shape = SubResource("RectangleShape2D_q72fj")
 
