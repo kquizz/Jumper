@@ -39,9 +39,9 @@ func update_hud() -> void:
 	hud.get_node("Gem Count Ones").texture = get_preload(gem_ones)
 
 func _physics_process(delta: float) -> void:
-	print(state)
+	#print(state)
 	if not ray_cast_down.is_colliding():
-		#print(1)
+		print(1)
 		velocity += get_gravity() * delta
 		state = "jump"
 		$AnimatedSprite2D.animation = "jump"
