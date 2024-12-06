@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dcjx43je44o6b"]
+[gd_scene load_steps=21 format=3 uid="uid://dcjx43je44o6b"]
 
 [ext_resource type="Script" path="res://scripts/green-player.gd" id="1_d6ygd"]
 [ext_resource type="Texture2D" uid="uid://4clh2wtbplh" path="res://assets/unused/OLD_Player/p1_walk/PNG/p1_walk01.png" id="1_jjmi3"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://dsbqesm4ajhv7" path="res://assets/unused/OLD_Player/p1_walk/PNG/p1_walk09.png" id="9_qa6uj"]
 [ext_resource type="Texture2D" uid="uid://bdhcja6imxpen" path="res://assets/unused/OLD_Player/p1_walk/PNG/p1_walk10.png" id="10_45mxc"]
 [ext_resource type="Texture2D" uid="uid://dxg7pj7hhfdac" path="res://assets/unused/OLD_Player/p1_walk/PNG/p1_walk11.png" id="11_sixh4"]
+[ext_resource type="PackedScene" uid="uid://c84uubkb2kl54" path="res://scenes/HUD.tscn" id="18_xhckw"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_slesh"]
 animations = [{
@@ -133,5 +134,13 @@ position = Vector2(1, -65)
 [node name="CarryCooldownTimer" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
+
+[node name="HUD" parent="." instance=ExtResource("18_xhckw")]
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(0, 6)
+zoom = Vector2(2, 2)
+limit_bottom = 600
+limit_smoothed = true
 
 [connection signal="timeout" from="CarryCooldownTimer" to="." method="_on_carry_cooldown_timer_timeout"]

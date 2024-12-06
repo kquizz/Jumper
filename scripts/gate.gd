@@ -33,6 +33,8 @@ func _adjust_collision_shape() -> void:
 	pass
 
 func _on_body_entered(body: Node) -> void:
+	if body is not CharacterBody2D:
+		return 
 	print("gated")
 	print(body.color)
 	print(color)

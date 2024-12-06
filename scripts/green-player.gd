@@ -41,19 +41,19 @@ func update_hud() -> void:
 func _physics_process(delta: float) -> void:
 	#print(state)
 	if not ray_cast_down.is_colliding():
-		print(1)
+		#print(1)
 		velocity += get_gravity() * delta
 		state = "jump"
 		$AnimatedSprite2D.animation = "jump"
 	else:
-		print(2)
+		#print(2)
 		if self.get_parent() is CharacterBody2D:
 			state = "ride"
 		else:
 			state = "stand"
 
 	if Input.is_action_just_pressed("jump") and ray_cast_down.is_colliding():
-		print(3)
+		#print(3)
 		velocity.y = JUMP_VELOCITY
 
 		if state == "ride":
@@ -63,7 +63,7 @@ func _physics_process(delta: float) -> void:
 
 	var direction := Input.get_axis("move_left", "move_right")
 	if direction:
-		print(5)
+		#print(5)
 		velocity.x = direction * SPEED
 
 		if state == "ride":
@@ -82,7 +82,7 @@ func _physics_process(delta: float) -> void:
 	$AnimatedSprite2D.animation = state
 		
 	if ray_cast_up.is_colliding():
-		print(6)
+		#print(6)
 		print("being ridden")
 		var colliding_body = ray_cast_up.get_collider()
 		if colliding_body and colliding_body is CharacterBody2D and colliding_body.can_be_carried:

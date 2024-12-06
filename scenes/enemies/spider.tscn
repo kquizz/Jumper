@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://djmq5i45066fi"]
 
+[ext_resource type="Script" path="res://scripts/spider.gd" id="1_u1wl3"]
 [ext_resource type="Texture2D" uid="uid://div0nbnxgqk5" path="res://assets/Enemies/spider_walk1.png" id="1_w0d7e"]
-[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_wuxsh"]
 [ext_resource type="Texture2D" uid="uid://4xasys4sg2ed" path="res://assets/Enemies/spider_walk2.png" id="2_ft0et"]
 [ext_resource type="PackedScene" uid="uid://kp2p1gkxbfak" path="res://scenes/killzone.tscn" id="3_g2cpk"]
 
@@ -23,8 +23,8 @@ animations = [{
 radius = 18.0
 height = 54.0
 
-[node name="Enemy" type="Node2D"]
-script = ExtResource("1_wuxsh")
+[node name="Spider" type="Node2D"]
+script = ExtResource("1_u1wl3")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -44,10 +44,28 @@ rotation = -1.13446
 scale = Vector2(0.75, 0.75)
 shape = SubResource("CapsuleShape2D_84vxw")
 
-[node name="RayCastRight" type="RayCast2D" parent="."]
-visible = false
-target_position = Vector2(44, 0)
+[node name="RayCast_Right" type="RayCast2D" parent="."]
+target_position = Vector2(30, 0)
+collision_mask = 31
+collide_with_areas = true
 
-[node name="RayCastLeft" type="RayCast2D" parent="."]
-visible = false
-target_position = Vector2(-44, 0)
+[node name="RayCast_Left" type="RayCast2D" parent="."]
+position = Vector2(1, 0)
+target_position = Vector2(-30, 0)
+collision_mask = 31
+collide_with_areas = true
+
+[node name="RayCast_Down_Left" type="RayCast2D" parent="."]
+target_position = Vector2(-30, 30)
+collision_mask = 31
+collide_with_areas = true
+
+[node name="RayCast_Down_Right" type="RayCast2D" parent="."]
+target_position = Vector2(30, 30)
+collision_mask = 31
+collide_with_areas = true
+
+[node name="RayCast_Down" type="RayCast2D" parent="."]
+target_position = Vector2(0, 30)
+collision_mask = 31
+collide_with_areas = true

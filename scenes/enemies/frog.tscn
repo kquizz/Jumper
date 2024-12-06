@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://x2enjx5fmyj4"]
+
+[ext_resource type="Texture2D" uid="uid://b0gs5gqxsoogs" path="res://assets/Enemies/frog_leap.png" id="1_63qjn"]
+[ext_resource type="Texture2D" uid="uid://cjj17gmmqk2ke" path="res://assets/Enemies/frog_dead.png" id="1_xie3r"]
+[ext_resource type="Texture2D" uid="uid://b0y5x4y4lolor" path="res://assets/Enemies/frog.png" id="2_sdrpw"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7vovn"]
+radius = 16.0
+height = 36.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4bbvy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_xie3r")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_63qjn")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_sdrpw")
+}],
+"loop": true,
+"name": &"wait",
+"speed": 5.0
+}]
+
+[node name="Frog" type="Node2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3, 0)
+shape = SubResource("CapsuleShape2D_7vovn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_4bbvy")
+animation = &"wait"
+autoplay = "wait"

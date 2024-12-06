@@ -12,10 +12,10 @@
 [ext_resource type="PackedScene" uid="uid://brp6qb7f6gv8p" path="res://scenes/gems/green_gem.tscn" id="11_hiaha"]
 [ext_resource type="PackedScene" uid="uid://bg46njmpw044p" path="res://scenes/gates/blue-gate.tscn" id="11_m0w6n"]
 [ext_resource type="PackedScene" uid="uid://dcjx43je44o6b" path="res://scenes/players/green-player.tscn" id="12_lltxk"]
-[ext_resource type="PackedScene" uid="uid://c84uubkb2kl54" path="res://scenes/HUD.tscn" id="13_fnn0e"]
 [ext_resource type="PackedScene" uid="uid://cc3pgnhpovybn" path="res://scenes/players/blue-player.tscn" id="14_dhgqp"]
 [ext_resource type="Script" path="res://scripts/blue-player.gd" id="15_c6u8l"]
 [ext_resource type="PackedScene" uid="uid://bk4j7wh11scbp" path="res://scenes/keys/blue-key.tscn" id="17_0q7mw"]
+[ext_resource type="PackedScene" uid="uid://djmq5i45066fi" path="res://scenes/enemies/spider.tscn" id="17_pkv2s"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ckfbm"]
 distance = -129.0
@@ -3099,11 +3099,13 @@ shape = SubResource("WorldBoundaryShape2D_ckfbm")
 [node name="Green Key" parent="Keys" instance=ExtResource("4_7kjrn")]
 position = Vector2(1850, -139)
 
+[node name="Blue Key" parent="Keys" instance=ExtResource("17_0q7mw")]
+position = Vector2(915, 250)
+
 [node name="Platforms" type="Node" parent="."]
 
 [node name="Mover platform" parent="Platforms" instance=ExtResource("5_ho5u2")]
 position = Vector2(1689, 26)
-collision_mask = 31
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/Mover platform"]
 libraries = {
@@ -3113,13 +3115,12 @@ autoplay = "move platform"
 
 [node name="static platform" parent="Platforms" instance=ExtResource("5_ho5u2")]
 position = Vector2(1722, -41)
-collision_mask = 31
 
 [node name="TileMaps" type="Node" parent="."]
 
 [node name="Background TileMap" type="TileMapLayer" parent="TileMaps"]
-position = Vector2(31, 14)
-tile_map_data = PackedByteArray("AAAEAAMAAAABAAIAAAAKAAMAAAABAAIAAAAVAAIAAAABAAIAAAAbAAIAAAABAAIAAAAFAAMAAAAEAAMAAAADAAQAAAAHAAgAAAAEAAQAAAAHAAgAAAAFAAQAAAAHAAgAAAAGAAQAAAAHAAgAAAAHAAQAAAAHAAgAAAAIAAQAAAAHAAgAAAAJAAQAAAAHAAgAAAAKAAQAAAAHAAgAAAALAAQAAAAHAAgAAAAMAAQAAAAHAAgAAAANAAQAAAAHAAgAAAAOAAQAAAAHAAgAAAAPAAQAAAAHAAgAAAAQAAQAAAAHAAgAAAARAAQAAAAHAAgAAAASAAQAAAAHAAgAAAATAAQAAAAHAAgAAAAUAAQAAAAHAAgAAAAVAAQAAAAHAAgAAAAWAAQAAAAHAAgAAAAXAAQAAAAHAAgAAAAYAAQAAAAHAAgAAAAZAAQAAAAHAAgAAAAaAAQAAAAHAAgAAAAbAAQAAAAHAAgAAAAcAAQAAAAHAAgAAAAdAAQAAAAHAAgAAAAeAAQAAAAHAAgAAAAfAAQAAAAHAAgAAAAgAAQAAAAHAAgAAAAhAAQAAAAHAAgAAAAiAAQAAAAHAAgAAAAjAAQAAAAHAAgAAAAkAAQAAAAHAAgAAAAlAAQAAAAHAAgAAAAmAAQAAAAHAAgAAAAnAAQAAAAHAAgAAAAoAAQAAAAHAAgAAAA=")
+position = Vector2(30, 14)
+tile_map_data = PackedByteArray("AAAEAAMAAAABAAIAAAAKAAMAAAABAAIAAAAVAAIAAAABAAIAAAAbAAIAAAABAAIAAAAFAAMAAAAEAAMAAAADAAQAAAAHAAgAAAAEAAQAAAAHAAgAAAAFAAQAAAAHAAgAAAAGAAQAAAAHAAgAAAAHAAQAAAAHAAgAAAAIAAQAAAAHAAgAAAAJAAQAAAAHAAgAAAAKAAQAAAAHAAgAAAALAAQAAAAHAAgAAAAMAAQAAAAHAAgAAAANAAQAAAAHAAgAAAAOAAQAAAAHAAgAAAAPAAQAAAAHAAgAAAAQAAQAAAAHAAgAAAARAAQAAAAHAAgAAAASAAQAAAAHAAgAAAATAAQAAAAHAAgAAAAUAAQAAAAHAAgAAAAVAAQAAAAHAAgAAAAWAAQAAAAHAAgAAAAXAAQAAAAHAAgAAAAYAAQAAAAHAAgAAAAZAAQAAAAHAAgAAAAaAAQAAAAHAAgAAAAbAAQAAAAHAAgAAAAcAAQAAAAHAAgAAAAdAAQAAAAHAAgAAAAeAAQAAAAHAAgAAAAfAAQAAAAHAAgAAAAgAAQAAAAHAAgAAAAhAAQAAAAHAAgAAAAiAAQAAAAHAAgAAAAjAAQAAAAHAAgAAAAkAAQAAAAHAAgAAAAlAAQAAAAHAAgAAAAmAAQAAAAHAAgAAAAnAAQAAAAHAAgAAAAoAAQAAAAHAAgAAAAPAAMAAAAIAAwAAAAPAAIAAAAIAAwAAAA=")
 tile_set = SubResource("TileSet_y068a")
 
 [node name="Foreground TileMap" type="TileMapLayer" parent="TileMaps"]
@@ -3146,7 +3147,7 @@ collision_mask = 31
 [node name="Gates" type="Node" parent="."]
 
 [node name="Blue Gate" parent="Gates" instance=ExtResource("11_m0w6n")]
-position = Vector2(1298, 260)
+position = Vector2(1321, 259)
 
 [node name="Green Gate" parent="Gates" instance=ExtResource("10_ct813")]
 position = Vector2(2041, 253)
@@ -3162,19 +3163,17 @@ collision_mask = 31
 [node name="Players" type="Node" parent="."]
 
 [node name="Green Player" parent="Players" instance=ExtResource("12_lltxk")]
-position = Vector2(269, 212)
-
-[node name="HUD" parent="Players/Green Player" instance=ExtResource("13_fnn0e")]
-
-[node name="Camera" type="Camera2D" parent="Players/Green Player"]
-position = Vector2(0, 6)
-zoom = Vector2(2, 2)
-limit_bottom = 600
-limit_smoothed = true
+position = Vector2(431, 81)
 
 [node name="Blue Player" parent="Players" instance=ExtResource("14_dhgqp")]
 position = Vector2(503, 161)
 script = ExtResource("15_c6u8l")
 
-[node name="Blue Key" parent="." instance=ExtResource("17_0q7mw")]
-position = Vector2(885, 235)
+[node name="Enemy" parent="." instance=ExtResource("17_pkv2s")]
+position = Vector2(1177, 167)
+
+[node name="Green Gates" parent="." instance=ExtResource("10_ct813")]
+position = Vector2(2204, 183)
+
+[node name="Green Key" parent="." instance=ExtResource("4_7kjrn")]
+position = Vector2(2014, -10)

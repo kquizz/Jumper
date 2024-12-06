@@ -3171,9 +3171,9 @@ position = Vector2(2547, 491)
 [node name="Green Player" parent="Players" instance=ExtResource("12_3bfvn")]
 position = Vector2(269, 212)
 
-[node name="HUD" parent="Players/Green Player" instance=ExtResource("13_v86n8")]
+[node name="HUD2" parent="Players/Green Player" instance=ExtResource("13_v86n8")]
 
-[node name="Camera" type="Camera2D" parent="Players/Green Player"]
+[node name="Camera2" type="Camera2D" parent="Players/Green Player"]
 position = Vector2(0, 6)
 zoom = Vector2(2, 2)
 limit_bottom = 600
