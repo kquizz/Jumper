@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0ua5y13jj8bi"]
+
+[ext_resource type="Script" path="res://scripts/splash_screen.gd" id="1_mwb41"]
+[ext_resource type="Texture2D" uid="uid://dw2twwqpae2ws" path="res://assets/unused/OLD_moreEnemiesAnimations/sample.png" id="2_dutp2"]
+
+[node name="SplashScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_mwb41")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 2.0
+offset_right = 1144.0
+offset_bottom = 648.0
+texture = ExtResource("2_dutp2")
+
+[node name="Button" type="Button" parent="."]
+z_index = 5
+layout_mode = 0
+offset_left = 627.0
+offset_top = 503.0
+offset_right = 1128.0
+offset_bottom = 629.0
+text = "Click here to Start the Game"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
