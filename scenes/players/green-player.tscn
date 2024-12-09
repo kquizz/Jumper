@@ -1,32 +1,52 @@
-[gd_scene load_steps=21 format=3 uid="uid://dcjx43je44o6b"]
+[gd_scene load_steps=14 format=3 uid="uid://dcjx43je44o6b"]
 
-[ext_resource type="Script" path="res://scripts/green-player.gd" id="1_d6ygd"]
-[ext_resource type="Texture2D" uid="uid://4clh2wtbplh" path="res://assets/unused/OLD_Player/p1_walk/PNG/p1_walk01.png" id="1_jjmi3"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_jpkvq"]
 [ext_resource type="Texture2D" uid="uid://doi2j6dg77i1n" path="res://assets/unused/OLD_Player/p1_duck.png" id="1_lghob"]
-[ext_resource type="Texture2D" uid="uid://bmu2fgrll84ge" path="res://assets/unused/OLD_Player/p1_walk/PNG/p1_walk02.png" id="2_d152t"]
 [ext_resource type="Texture2D" uid="uid://xg41v0u4jg6n" path="res://assets/unused/OLD_Player/p1_hurt.png" id="2_phj5i"]
-[ext_resource type="Texture2D" uid="uid://b2v8dlup0dptv" path="res://assets/unused/OLD_Player/p1_walk/PNG/p1_walk03.png" id="3_0kvsx"]
+[ext_resource type="Texture2D" uid="uid://lw6t5m763id3" path="res://assets/Alien sprites/alienGreen_badge1.png" id="2_x1spy"]
+[ext_resource type="Texture2D" uid="uid://bsc7r8niofuvu" path="res://assets/Alien sprites/alienGreen_badge2.png" id="2_xmhe3"]
+[ext_resource type="Texture2D" uid="uid://iqmg0ek4ar6j" path="res://assets/Alien sprites/alienGreen_walk1.png" id="3_i60m0"]
 [ext_resource type="Texture2D" uid="uid://ejbg63pvfp2v" path="res://assets/unused/OLD_Player/p1_jump.png" id="3_r38hg"]
 [ext_resource type="Texture2D" uid="uid://jw5utic6cpy7" path="res://assets/unused/OLD_Player/p1_stand.png" id="4_4ot6r"]
-[ext_resource type="Texture2D" uid="uid://bk645pi4ymrnt" path="res://assets/unused/OLD_Player/p1_walk/PNG/p1_walk04.png" id="4_i3ius"]
-[ext_resource type="Texture2D" uid="uid://raru1onwl3ve" path="res://assets/unused/OLD_Player/p1_walk/PNG/p1_walk05.png" id="5_6rugh"]
+[ext_resource type="Texture2D" uid="uid://dp34wx33brl4g" path="res://assets/Alien sprites/alienGreen_walk2.png" id="4_c13ud"]
 [ext_resource type="Texture2D" uid="uid://cb4xsm1xax01t" path="res://assets/Alien sprites/alienGreen.png" id="5_qvxc0"]
-[ext_resource type="Texture2D" uid="uid://c4dcmur3vmv5k" path="res://assets/unused/OLD_Player/p1_walk/PNG/p1_walk06.png" id="6_3xhcn"]
-[ext_resource type="Texture2D" uid="uid://c7pd7s818umwh" path="res://assets/unused/OLD_Player/p1_walk/PNG/p1_walk07.png" id="7_o2lkq"]
-[ext_resource type="Texture2D" uid="uid://bhp38a6dyspob" path="res://assets/unused/OLD_Player/p1_walk/PNG/p1_walk08.png" id="8_80nmd"]
-[ext_resource type="Texture2D" uid="uid://dsbqesm4ajhv7" path="res://assets/unused/OLD_Player/p1_walk/PNG/p1_walk09.png" id="9_qa6uj"]
-[ext_resource type="Texture2D" uid="uid://bdhcja6imxpen" path="res://assets/unused/OLD_Player/p1_walk/PNG/p1_walk10.png" id="10_45mxc"]
-[ext_resource type="Texture2D" uid="uid://dxg7pj7hhfdac" path="res://assets/unused/OLD_Player/p1_walk/PNG/p1_walk11.png" id="11_sixh4"]
 [ext_resource type="PackedScene" uid="uid://c84uubkb2kl54" path="res://scenes/HUD.tscn" id="18_xhckw"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_slesh"]
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("4_4ot6r")
+}],
+"loop": true,
+"name": &"0",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_i60m0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_c13ud")
+}],
+"loop": true,
+"name": &"1",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_r38hg")
+}],
+"loop": true,
+"name": &"2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("1_lghob")
 }],
 "loop": true,
-"name": &"duck",
+"name": &"3",
 "speed": 5.0
 }, {
 "frames": [{
@@ -34,15 +54,23 @@ animations = [{
 "texture": ExtResource("2_phj5i")
 }],
 "loop": true,
-"name": &"hurt",
+"name": &"4",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_r38hg")
+"texture": ExtResource("2_x1spy")
 }],
 "loop": true,
-"name": &"jump",
+"name": &"5",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_xmhe3")
+}],
+"loop": true,
+"name": &"6",
 "speed": 5.0
 }, {
 "frames": [{
@@ -50,54 +78,8 @@ animations = [{
 "texture": ExtResource("5_qvxc0")
 }],
 "loop": true,
-"name": &"ride",
+"name": &"7",
 "speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("4_4ot6r")
-}],
-"loop": true,
-"name": &"stand",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_jjmi3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_d152t")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_0kvsx")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_i3ius")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_6rugh")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_3xhcn")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_o2lkq")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_80nmd")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_qa6uj")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_45mxc")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_sixh4")
-}],
-"loop": true,
-"name": &"walk",
-"speed": 10.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wbbly"]
@@ -108,14 +90,14 @@ height = 74.0
 z_index = 5
 position = Vector2(207, 110)
 collision_mask = 17
-script = ExtResource("1_d6ygd")
+script = ExtResource("1_jpkvq")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 3)
 sprite_frames = SubResource("SpriteFrames_slesh")
-animation = &"walk"
-autoplay = "stand"
+animation = &"1"
+autoplay = "0"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 3)

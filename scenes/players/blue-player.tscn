@@ -1,47 +1,41 @@
-[gd_scene load_steps=20 format=3 uid="uid://cc3pgnhpovybn"]
+[gd_scene load_steps=11 format=3 uid="uid://cc3pgnhpovybn"]
 
-[ext_resource type="Script" path="res://scripts/green-player.gd" id="1_nfphb"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_p3ux6"]
 [ext_resource type="Texture2D" uid="uid://imqtfmacbqam" path="res://assets/unused/OLD_Player/p2_duck.png" id="2_msiwr"]
+[ext_resource type="Texture2D" uid="uid://qrcdyr7fesii" path="res://assets/Alien sprites/alienBlue_walk1.png" id="3_1vr7c"]
 [ext_resource type="Texture2D" uid="uid://cactwys82xoql" path="res://assets/Alien sprites/alienBlue.png" id="3_c751n"]
-[ext_resource type="Texture2D" uid="uid://c3vnm01cfh8ji" path="res://assets/unused/OLD_Player/p2_hurt.png" id="3_p0txu"]
 [ext_resource type="Texture2D" uid="uid://dbxcmk7hcb7lo" path="res://assets/unused/OLD_Player/p2_jump.png" id="4_dgb42"]
+[ext_resource type="Texture2D" uid="uid://dcab6tfdaqxfa" path="res://assets/Alien sprites/alienBlue_walk2.png" id="4_paymg"]
 [ext_resource type="Texture2D" uid="uid://butl01u8ntlu4" path="res://assets/unused/OLD_Player/p2_stand.png" id="5_j6pwp"]
-[ext_resource type="Texture2D" uid="uid://bvk6c8u0yqk6j" path="res://assets/unused/OLD_Player/p2_walk/PNG/p2_walk01.png" id="6_0s7fh"]
-[ext_resource type="Texture2D" uid="uid://btgow1usuv32e" path="res://assets/unused/OLD_Player/p2_walk/PNG/p2_walk02.png" id="7_b1a2c"]
-[ext_resource type="Texture2D" uid="uid://dyyfu04bdnplh" path="res://assets/unused/OLD_Player/p2_walk/PNG/p2_walk03.png" id="8_m5opp"]
-[ext_resource type="Texture2D" uid="uid://b0ebay1nrjktp" path="res://assets/unused/OLD_Player/p2_walk/PNG/p2_walk04.png" id="9_wuvfl"]
-[ext_resource type="Texture2D" uid="uid://cab2d1str32hk" path="res://assets/unused/OLD_Player/p2_walk/PNG/p2_walk05.png" id="10_qi3dd"]
-[ext_resource type="Texture2D" uid="uid://cfl7d0cx1vw4c" path="res://assets/unused/OLD_Player/p2_walk/PNG/p2_walk06.png" id="11_jge51"]
-[ext_resource type="Texture2D" uid="uid://c6bo7m31dw7sb" path="res://assets/unused/OLD_Player/p2_walk/PNG/p2_walk07.png" id="12_5p8yh"]
-[ext_resource type="Texture2D" uid="uid://c3tnjgb2qo1yp" path="res://assets/unused/OLD_Player/p2_walk/PNG/p2_walk08.png" id="13_03q1b"]
-[ext_resource type="Texture2D" uid="uid://c26kflb25ajhw" path="res://assets/unused/OLD_Player/p2_walk/PNG/p2_walk09.png" id="14_wirwg"]
-[ext_resource type="Texture2D" uid="uid://c7xp4cxn0q8qg" path="res://assets/unused/OLD_Player/p2_walk/PNG/p2_walk10.png" id="15_usg0y"]
-[ext_resource type="Texture2D" uid="uid://dj7e5q5wyuk3i" path="res://assets/unused/OLD_Player/p2_walk/PNG/p2_walk11.png" id="16_oojec"]
+[ext_resource type="Texture2D" uid="uid://csfpntgcsfjij" path="res://assets/Alien sprites/alienBlue_stand.png" id="7_nkm0m"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_slesh"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_msiwr")
+"texture": ExtResource("5_j6pwp")
 }],
 "loop": true,
-"name": &"duck",
+"name": &"0",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_p0txu")
+"texture": ExtResource("3_1vr7c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_paymg")
 }],
 "loop": true,
-"name": &"hurt",
-"speed": 5.0
+"name": &"1",
+"speed": 2.0
 }, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("4_dgb42")
 }],
 "loop": true,
-"name": &"jump",
+"name": &"2",
 "speed": 5.0
 }, {
 "frames": [{
@@ -49,54 +43,34 @@ animations = [{
 "texture": ExtResource("3_c751n")
 }],
 "loop": true,
-"name": &"ride",
+"name": &"3",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_j6pwp")
+"texture": ExtResource("7_nkm0m")
 }],
 "loop": true,
-"name": &"stand",
+"name": &"4",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"5",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"6",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_0s7fh")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_b1a2c")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_m5opp")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_wuvfl")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_qi3dd")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_jge51")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_5p8yh")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_03q1b")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_wirwg")
-}, {
-"duration": 1.0,
-"texture": ExtResource("15_usg0y")
-}, {
-"duration": 1.0,
-"texture": ExtResource("16_oojec")
+"texture": ExtResource("2_msiwr")
 }],
 "loop": true,
-"name": &"walk",
-"speed": 11.0
+"name": &"duck",
+"speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wbbly"]
@@ -107,14 +81,14 @@ height = 74.0
 z_index = 5
 position = Vector2(207, 110)
 collision_mask = 17
-script = ExtResource("1_nfphb")
+script = ExtResource("1_p3ux6")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 3)
 sprite_frames = SubResource("SpriteFrames_slesh")
-animation = &"ride"
-autoplay = "stand"
+animation = &"1"
+autoplay = "0"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 3)
