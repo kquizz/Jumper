@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bg46njmpw044p"]
 
-[ext_resource type="Script" path="res://scripts/gate.gd" id="1_wi01f"]
+[ext_resource type="Script" uid="uid://bes3c1pn1vfv6" path="res://scripts/gate.gd" id="1_wi01f"]
 [ext_resource type="Texture2D" uid="uid://kdoacfbhd5jb" path="res://assets/Tiles/lock_blue.png" id="2_3dlhs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c7bi3"]
@@ -9,9 +9,8 @@ size = Vector2(71, 70)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ludie"]
 size = Vector2(79, 70)
 
-[node name="Green Gates" type="StaticBody2D"]
-collision_layer = 16
-collision_mask = 31
+[node name="Blue Gates" type="StaticBody2D"]
+collision_mask = 0
 script = ExtResource("1_wi01f")
 
 [node name="Lock" type="TextureRect" parent="."]
@@ -32,6 +31,8 @@ shape = SubResource("RectangleShape2D_c7bi3")
 
 [node name="Area2D" type="Area2D" parent="."]
 visible = false
+collision_layer = 0
+collision_mask = 62
 
 [node name="UnlockArea" type="CollisionShape2D" parent="Area2D"]
 visible = false

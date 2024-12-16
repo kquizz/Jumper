@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://dcjx43je44o6b"]
 
-[ext_resource type="Script" path="res://scripts/player.gd" id="1_jpkvq"]
+[ext_resource type="Script" uid="uid://s84bghcg3fsa" path="res://scripts/player/player.gd" id="1_jpkvq"]
 [ext_resource type="Texture2D" uid="uid://doi2j6dg77i1n" path="res://assets/unused/OLD_Player/p1_duck.png" id="1_lghob"]
 [ext_resource type="Texture2D" uid="uid://xg41v0u4jg6n" path="res://assets/unused/OLD_Player/p1_hurt.png" id="2_phj5i"]
 [ext_resource type="Texture2D" uid="uid://lw6t5m763id3" path="res://assets/Alien sprites/alienGreen_badge1.png" id="2_x1spy"]
@@ -16,10 +16,58 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("2_x1spy")
+}],
+"loop": true,
+"name": &"dead_active",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_xmhe3")
+}],
+"loop": true,
+"name": &"dead_inactive",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_lghob")
+}],
+"loop": true,
+"name": &"duck",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_phj5i")
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_r38hg")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_qvxc0")
+}],
+"loop": true,
+"name": &"ride",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("4_4ot6r")
 }],
 "loop": true,
-"name": &"0",
+"name": &"stand",
 "speed": 5.0
 }, {
 "frames": [{
@@ -30,56 +78,8 @@ animations = [{
 "texture": ExtResource("4_c13ud")
 }],
 "loop": true,
-"name": &"1",
-"speed": 2.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_r38hg")
-}],
-"loop": true,
-"name": &"2",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_lghob")
-}],
-"loop": true,
-"name": &"3",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_phj5i")
-}],
-"loop": true,
-"name": &"4",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_x1spy")
-}],
-"loop": true,
-"name": &"5",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_xmhe3")
-}],
-"loop": true,
-"name": &"6",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("5_qvxc0")
-}],
-"loop": true,
-"name": &"7",
-"speed": 5.0
+"name": &"walk",
+"speed": 3.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wbbly"]
@@ -89,15 +89,17 @@ height = 74.0
 [node name="Green Player" type="CharacterBody2D"]
 z_index = 5
 position = Vector2(207, 110)
-collision_mask = 17
+collision_layer = 2
+collision_mask = 131
 script = ExtResource("1_jpkvq")
-metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+light_mask = 129
+visibility_layer = 3
 position = Vector2(0, 3)
 sprite_frames = SubResource("SpriteFrames_slesh")
-animation = &"1"
-autoplay = "0"
+animation = &"stand"
+autoplay = "stand"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 3)
@@ -105,13 +107,14 @@ shape = SubResource("CapsuleShape2D_wbbly")
 
 [node name="RayCast_down" type="RayCast2D" parent="."]
 target_position = Vector2(0, 51)
-collision_mask = 17
+collision_mask = 63
 
 [node name="RayCast_up" type="RayCast2D" parent="."]
 target_position = Vector2(0, -42)
+collision_mask = 2
 
 [node name="CarryPosition" type="Marker2D" parent="."]
-position = Vector2(1, -65)
+position = Vector2(1, -75)
 
 [node name="CarryCooldownTimer" type="Timer" parent="."]
 wait_time = 0.5

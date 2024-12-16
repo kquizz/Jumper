@@ -1,6 +1,6 @@
 extends Area2D
 
-@onready var engine: Node = %Engine
+
 var color : String
 
 func _ready() -> void:
@@ -17,6 +17,6 @@ func _ready() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.color == self.color:
-		engine.add_gem(color)
+		GlobalEngine.add_gem(color)
 		body.update_hud()
 		self.queue_free()

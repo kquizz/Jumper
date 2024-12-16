@@ -1,6 +1,4 @@
 extends StaticBody2D
-
-@onready var engine: Node = %Engine
 var color : String 
 @export var height: int = 5
 @onready var lock_texture: Texture2D = $Lock.texture
@@ -35,9 +33,5 @@ func _adjust_collision_shape() -> void:
 func _on_body_entered(body: Node) -> void:
 	if body is not CharacterBody2D:
 		return 
-	print("gated")
-	print(body.color)
-	print(color)
-	print(%Engine.keys)
-	if body is CharacterBody2D and body.color == color and %Engine.has_key(color):
+	if body is CharacterBody2D and body.color == color and GlobalEngine.has_key(color):
 		self.queue_free()

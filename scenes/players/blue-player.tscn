@@ -1,22 +1,72 @@
-[gd_scene load_steps=11 format=3 uid="uid://cc3pgnhpovybn"]
+[gd_scene load_steps=13 format=3 uid="uid://cc3pgnhpovybn"]
 
-[ext_resource type="Script" path="res://scripts/player.gd" id="1_p3ux6"]
+[ext_resource type="Script" uid="uid://s84bghcg3fsa" path="res://scripts/player/player.gd" id="1_p3ux6"]
+[ext_resource type="Texture2D" uid="uid://b51jg4u1s8ixw" path="res://assets/Alien sprites/alienBlue_badge1.png" id="2_44b3y"]
 [ext_resource type="Texture2D" uid="uid://imqtfmacbqam" path="res://assets/unused/OLD_Player/p2_duck.png" id="2_msiwr"]
 [ext_resource type="Texture2D" uid="uid://qrcdyr7fesii" path="res://assets/Alien sprites/alienBlue_walk1.png" id="3_1vr7c"]
 [ext_resource type="Texture2D" uid="uid://cactwys82xoql" path="res://assets/Alien sprites/alienBlue.png" id="3_c751n"]
+[ext_resource type="Texture2D" uid="uid://cphnrv1acvria" path="res://assets/Alien sprites/alienBlue_badge2.png" id="3_sumof"]
 [ext_resource type="Texture2D" uid="uid://dbxcmk7hcb7lo" path="res://assets/unused/OLD_Player/p2_jump.png" id="4_dgb42"]
 [ext_resource type="Texture2D" uid="uid://dcab6tfdaqxfa" path="res://assets/Alien sprites/alienBlue_walk2.png" id="4_paymg"]
+[ext_resource type="Texture2D" uid="uid://dwf1g0r1m0tbq" path="res://assets/Alien sprites/alienBlue_hurt.png" id="5_105be"]
 [ext_resource type="Texture2D" uid="uid://butl01u8ntlu4" path="res://assets/unused/OLD_Player/p2_stand.png" id="5_j6pwp"]
-[ext_resource type="Texture2D" uid="uid://csfpntgcsfjij" path="res://assets/Alien sprites/alienBlue_stand.png" id="7_nkm0m"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_slesh"]
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("2_44b3y")
+}],
+"loop": true,
+"name": &"dead_active",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_sumof")
+}],
+"loop": true,
+"name": &"dead_inactive",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_msiwr")
+}],
+"loop": true,
+"name": &"duck",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_105be")
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_dgb42")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_c751n")
+}],
+"loop": true,
+"name": &"ride",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("5_j6pwp")
 }],
 "loop": true,
-"name": &"0",
+"name": &"stand",
 "speed": 5.0
 }, {
 "frames": [{
@@ -27,50 +77,8 @@ animations = [{
 "texture": ExtResource("4_paymg")
 }],
 "loop": true,
-"name": &"1",
+"name": &"walk",
 "speed": 2.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("4_dgb42")
-}],
-"loop": true,
-"name": &"2",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_c751n")
-}],
-"loop": true,
-"name": &"3",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("7_nkm0m")
-}],
-"loop": true,
-"name": &"4",
-"speed": 5.0
-}, {
-"frames": [],
-"loop": true,
-"name": &"5",
-"speed": 5.0
-}, {
-"frames": [],
-"loop": true,
-"name": &"6",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_msiwr")
-}],
-"loop": true,
-"name": &"duck",
-"speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wbbly"]
@@ -80,15 +88,16 @@ height = 74.0
 [node name="Blue Player" type="CharacterBody2D"]
 z_index = 5
 position = Vector2(207, 110)
-collision_mask = 17
+collision_layer = 2
+collision_mask = 131
 script = ExtResource("1_p3ux6")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 3)
 sprite_frames = SubResource("SpriteFrames_slesh")
-animation = &"1"
-autoplay = "0"
+animation = &"stand"
+autoplay = "stand"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 3)
@@ -96,10 +105,11 @@ shape = SubResource("CapsuleShape2D_wbbly")
 
 [node name="RayCast_down" type="RayCast2D" parent="."]
 target_position = Vector2(0, 43)
-collision_mask = 17
+collision_mask = 31
 
 [node name="RayCast_up" type="RayCast2D" parent="."]
 target_position = Vector2(0, -42)
+collision_mask = 2
 
 [node name="CarryCooldownTimer" type="Timer" parent="."]
 wait_time = 0.5
